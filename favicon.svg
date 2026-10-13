@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="vortexaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#7952fc" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#7952fc" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+  <!-- Outer Hexagon -->
+  <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="url(#vortexaGrad)" stroke-width="3" fill="#0c0e17" />
+  <!-- Inner Dynamic V Shape -->
+  <path d="M19 22 L32 46 L45 22 L37 22 L32 33 L27 22 Z" fill="url(#vortexaGrad)" filter="url(#glow)"/>
+  <!-- Central Cyan Accent Node -->
+  <circle cx="32" cy="18" r="3" fill="#06b6d4" />
+</svg>

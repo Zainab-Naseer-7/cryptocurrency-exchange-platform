@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Social Metadata -->
+  <title>CRYPTERA | Ultra-Premium Cryptocurrency Exchange Platform</title>
+  <meta name="description" content="Trade the future with CRYPTERA. A world-class, ultra-premium, futuristic cryptocurrency exchange platform combining institutional FinTech, trading terminal precision, and luxury technology.">
+  <meta name="keywords" content="cryptocurrency exchange, trading terminal, bitcoin, ethereum, crypto trading, fintech, cryptera, digital assets">
+  <meta property="og:title" content="CRYPTERA — Trade the Future">
+  <meta property="og:description" content="Next-generation digital asset platform engineered for institutional and professional global traders.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Core Logic Script -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- 23 — PREMIUM DESKTOP CURSOR -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- AMBIENT BACKGROUND LIGHTING & SUBTLE TECH GRID -->
+  <div class="ambient-lighting" aria-hidden="true">
+    <div class="ambient-blob-1"></div>
+    <div class="ambient-blob-2"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       03 — GLOBAL NAVIGATION (STICKY & GLASSMORPHIC)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- 01 — BRAND IDENTITY LOGO -->
+      <a href="#" class="brand-logo" aria-label="CRYPTERA Home">
+        <svg class="brand-icon-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00f0ff"/>
+              <stop offset="0.5" stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+            <linearGradient id="logoInner" x1="10" y1="10" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00f0ff" stop-opacity="0.8"/>
+              <stop offset="1" stop-color="#d946ef" stop-opacity="0.8"/>
+            </linearGradient>
+          </defs>
+          <!-- Geometric multifaceted crypto emblem -->
+          <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="url(#logoGrad)" stroke-width="2.2" fill="rgba(0, 240, 255, 0.04)"/>
+          <polygon points="20,8 31,14 31,26 20,32 9,26 9,14" stroke="url(#logoInner)" stroke-width="1.6" fill="rgba(139, 92, 246, 0.1)"/>
+          <circle cx="20" cy="20" r="3.5" fill="#00f0ff"/>
+          <line x1="20" y1="8" x2="20" y2="16.5" stroke="#00f0ff" stroke-width="1.5"/>
+          <line x1="20" y1="23.5" x2="20" y2="32" stroke="#8b5cf6" stroke-width="1.5"/>
+          <line x1="9" y1="14" x2="16.5" y2="20" stroke="#00f0ff" stroke-width="1.5"/>
+          <line x1="23.5" y1="20" x2="31" y2="26" stroke="#8b5cf6" stroke-width="1.5"/>
+        </svg>
+        <span class="brand-name">
+          CRYPTERA
+          <span class="brand-badge">PRO</span>
+        </span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#markets" class="nav-link">Markets</a>
+        <a href="#terminal" class="nav-link">Trade</a>
+        <a href="#portfolio" class="nav-link">Assets</a>
+        <a href="#discover" class="nav-link">Discover</a>
+        <a href="#security" class="nav-link">Security</a>
+        <a href="#features" class="nav-link">Earn</a>
+      </nav>
+
+      <!-- Right Nav Controls -->
+      <div class="nav-actions">
+        <!-- Live Demo Network Status -->
+        <div class="network-pill" title="Demo Exchange Engine Online">
+          <span class="network-dot"></span>
+          <span>MAINNET SIMULATOR</span>
+        </div>
+
+        <!-- Theme Switcher (Dark / Light) -->
+        <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" title="Toggle Light/Dark Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Notification Bell -->
+        <button class="notification-bell-btn" onclick="showToast('No unread notifications', 'info')" aria-label="Notifications" title="System Alerts">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="bell-badge"></span>
+        </button>
+
+        <!-- User Profile Pill -->
+        <div class="user-profile-btn" onclick="openModal('authModal')">
+          <div class="user-avatar">AV</div>
+          <span class="user-name-label">Alex Vance</span>
+        </div>
+
+        <button class="btn btn-primary btn-sm" onclick="openModal('authModal')">
+          Deposit
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="menu-toggle-btn" onclick="openModal('mobileDrawer')" aria-label="Open Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         04 — HERO LANDING EXPERIENCE
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Small Badge -->
+          <div class="badge-tag">
+            <span class="badge-pulse"></span>
+            THE NEXT GENERATION OF DIGITAL ASSET TRADING
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title">
+            TRADE THE<br>
+            <span class="gradient-text">FUTURE.</span>
+          </h1>
+
+          <!-- Supporting Text -->
+          <p class="hero-subtitle">
+            A powerful, secure and intelligent digital asset platform engineered for the next generation of global traders. Institutional liquidity with sub-millisecond execution.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#terminal" class="btn btn-primary" onclick="scrollToElement('terminal')">
+              Start Trading →
+            </a>
+            <a href="#markets" class="btn btn-secondary" onclick="scrollToElement('markets')">
+              Explore Markets
+            </a>
+          </div>
+
+          <!-- Trust & Performance Statistics -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <div class="stat-value tabular-nums">$48.2B+</div>
+              <div class="stat-label">24h Volume</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-value tabular-nums">4.2M+</div>
+              <div class="stat-label">Active Traders</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-value tabular-nums">&lt;1.2ms</div>
+              <div class="stat-label">Matching Engine</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-value tabular-nums">100%</div>
+              <div class="stat-label">Cold Storage</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Animated Crypto Financial Sphere Visual -->
+        <div class="hero-visual-wrapper">
+          <canvas id="heroCanvas" aria-label="Interactive digital financial sphere"></canvas>
+
+          <!-- Floating Glass Data Card: Top Left -->
+          <div class="hero-floating-card card-top">
+            <div class="network-dot"></div>
+            <div>
+              <div style="font-size: 0.6875rem; color: var(--text-tertiary);">BTC / USDT INDEX</div>
+              <div class="tabular-nums font-bold" style="font-size: 0.9375rem;">$67,842.31</div>
+            </div>
+            <span class="trend-badge-up tabular-nums">+3.42%</span>
+          </div>
+
+          <!-- Floating Glass Data Card: Bottom Right -->
+          <div class="hero-floating-card card-bottom">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div>
+              <div style="font-size: 0.6875rem; color: var(--text-tertiary);">MPC VAULT SECURITY</div>
+              <div class="font-bold" style="font-size: 0.875rem; color: var(--green-up);">Zero Breaches</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05 — LIVE MARKET TICKER
+         ========================================================================== -->
+    <div class="ticker-strip" aria-label="Real-time market tickers">
+      <div class="ticker-track" id="tickerTrack">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         06 — MARKET OVERVIEW
+         ========================================================================== -->
+    <section class="section-wrapper" id="markets">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge-tag">LIVE LIQUIDITY</div>
+          <h2 class="section-title">MARKETS AT A GLANCE</h2>
+          <p class="section-desc">
+            Access over 250+ spot and derivative pairs with institutional depth, ultra-low spreads, and instantaneous order routing.
+          </p>
+        </div>
+
+        <div class="market-overview-header">
+          <!-- Filter Tabs -->
+          <div class="market-tabs" role="tablist">
+            <button class="tab-btn active" data-category="all" role="tab">All Assets</button>
+            <button class="tab-btn" data-category="spot" role="tab">Spot</button>
+            <button class="tab-btn" data-category="favorites" role="tab">★ Favorites</button>
+            <button class="tab-btn" data-category="trending" role="tab">Trending</button>
+            <button class="tab-btn" data-category="gainers" role="tab">Top Gainers</button>
+            <button class="tab-btn" data-category="losers" role="tab">Losers</button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="market-search-box">
+            <svg class="market-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="marketSearchInput" class="market-search-input" placeholder="Search by coin or symbol...">
+          </div>
+        </div>
+
+        <!-- Market Table -->
+        <div class="market-table-container">
+          <table class="crypto-table" aria-label="Market Data Table">
+            <thead>
+              <tr>
+                <th>Asset</th>
+                <th>Price</th>
+                <th>24h Change</th>
+                <th>24h High</th>
+                <th>24h Low</th>
+                <th>24h Volume</th>
+                <th>7d Trend</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="marketTableBody">
+              <!-- Dynamically populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         07, 08, 09 — ADVANCED TRADING TERMINAL
+         ========================================================================== -->
+    <section class="section-wrapper" id="terminal" style="padding-top: 40px;">
+      <div class="container">
+        <div class="section-title-wrap" style="margin-bottom: 32px;">
+          <div class="badge-tag">FINTECH PRO TERMINAL</div>
+          <h2 class="section-title">ADVANCED TRADING TERMINAL</h2>
+          <p class="section-desc">
+            High-frequency execution interface with real-time candlestick charting, full depth orderbook, and multi-order routing.
+          </p>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: var(--text-tertiary); letter-spacing: 0.05em;">
+            [DEMO ENVIRONMENT • REAL-TIME CLIENT-SIDE SIMULATION • EDUCATIONAL PURPOSE]
+          </div>
+        </div>
+
+        <div class="terminal-wrapper">
+          <!-- Terminal Top Info Bar -->
+          <div class="terminal-top-bar">
+            <div class="terminal-active-pair-info">
+              <div class="pair-badge-title" id="terminalPairTitle">
+                BTC/USDT
+              </div>
+              <div class="pair-price-hero tabular-nums text-cyan" id="terminalPriceHero">
+                $67,842.31
+              </div>
+              <span id="terminalChangeBadge" class="trend-badge-up tabular-nums">
+                ↑ +3.42%
+              </span>
+              <div class="pair-stat-tag">
+                <span class="lbl">24h High</span>
+                <span class="val tabular-nums" id="terminalHigh">$68,490.00</span>
+              </div>
+              <div class="pair-stat-tag">
+                <span class="lbl">24h Low</span>
+                <span class="val tabular-nums" id="terminalLow">$65,210.00</span>
+              </div>
+              <div class="pair-stat-tag">
+                <span class="lbl">24h Volume</span>
+                <span class="val tabular-nums" id="terminalVol">$32.48B</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-outline btn-sm" onclick="openModal('alertModal')">
+                🔔 Set Price Alert
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Terminal 3-Column Grid -->
+          <div class="terminal-grid">
+            <!-- Left: Market Watchlist -->
+            <div class="terminal-watchlist">
+              <div class="watchlist-header">
+                <input type="text" class="watchlist-input" placeholder="Search markets..." oninput="filterWatchlist(this.value)">
+              </div>
+              <div class="watchlist-list" id="terminalWatchlist">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- Center: Advanced Chart Area -->
+            <div class="terminal-chart-area">
+              <div class="chart-toolbar">
+                <!-- Timeframes -->
+                <div class="chart-timeframe-group">
+                  <button class="chart-tool-btn" data-tf="1m" onclick="setTimeframe('1m')">1m</button>
+                  <button class="chart-tool-btn" data-tf="5m" onclick="setTimeframe('5m')">5m</button>
+                  <button class="chart-tool-btn" data-tf="15m" onclick="setTimeframe('15m')">15m</button>
+                  <button class="chart-tool-btn active" data-tf="1H" onclick="setTimeframe('1H')">1H</button>
+                  <button class="chart-tool-btn" data-tf="4H" onclick="setTimeframe('4H')">4H</button>
+                  <button class="chart-tool-btn" data-tf="1D" onclick="setTimeframe('1D')">1D</button>
+                  <button class="chart-tool-btn" data-tf="1W" onclick="setTimeframe('1W')">1W</button>
+                </div>
+
+                <!-- Chart Type Controls -->
+                <div class="chart-type-group">
+                  <button class="chart-tool-btn active" data-type="candle" onclick="setChartType('candle')">Candles</button>
+                  <button class="chart-tool-btn" data-type="line" onclick="setChartType('line')">Line</button>
+                </div>
+
+                <!-- Indicators -->
+                <div style="display: flex; gap: 6px;">
+                  <button class="chart-tool-btn active" onclick="this.classList.toggle('active'); CRYPTERA_STATE.activeIndicators.ma20 = !CRYPTERA_STATE.activeIndicators.ma20; drawChart();">
+                    MA (20)
+                  </button>
+                  <button class="chart-tool-btn" onclick="this.classList.toggle('active'); showToast('Indicator toggled');">
+                    Bollinger
+                  </button>
+                </div>
+              </div>
+
+              <!-- Canvas Chart Area -->
+              <div class="chart-canvas-container">
+                <canvas id="tradingChartCanvas"></canvas>
+                <!-- Tooltip Overlay -->
+                <div id="chartHoverOverlay" class="chart-hover-overlay">
+                  <span>Hover to inspect OHLCV data</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Order Entry Panel & Orderbook -->
+            <div class="terminal-right-panel">
+              <div class="right-panel-tabs">
+                <button class="right-panel-tab-btn active" id="tabOrderForm" onclick="document.getElementById('orderFormPane').style.display='flex'; document.getElementById('orderbookPane').classList.remove('active'); this.classList.add('active'); document.getElementById('tabOrderbook').classList.remove('active');">
+                  Trade Entry
+                </button>
+                <button class="right-panel-tab-btn" id="tabOrderbook" onclick="document.getElementById('orderFormPane').style.display='none'; document.getElementById('orderbookPane').classList.add('active'); this.classList.add('active'); document.getElementById('tabOrderForm').classList.remove('active');">
+                  Live Order Book
+                </button>
+              </div>
+
+              <!-- Order Form Pane -->
+              <div class="order-form-container" id="orderFormPane">
+                <!-- Buy / Sell Toggle -->
+                <div class="buy-sell-toggle">
+                  <button type="button" class="buy-sell-btn active-buy" id="btnOrderBuy">BUY</button>
+                  <button type="button" class="buy-sell-btn" id="btnOrderSell">SELL</button>
+                </div>
+
+                <!-- Order Type Chips -->
+                <div class="order-type-selector">
+                  <span class="order-type-chip active">Limit</span>
+                  <span class="order-type-chip">Market</span>
+                  <span class="order-type-chip">Stop Limit</span>
+                </div>
+
+                <!-- Price Input -->
+                <div class="order-field-group">
+                  <div class="order-field-label">
+                    <span>Order Price</span>
+                    <span class="tabular-nums text-cyan">Best Ask</span>
+                  </div>
+                  <div class="order-input-wrap">
+                    <input type="number" id="orderPriceInput" class="order-input tabular-nums" step="0.01" value="67842.31">
+                    <span class="order-unit">USDT</span>
+                  </div>
+                </div>
+
+                <!-- Amount Input -->
+                <div class="order-field-group">
+                  <div class="order-field-label">
+                    <span>Order Quantity</span>
+                    <span class="tabular-nums">Avail: 4,250 USDT</span>
+                  </div>
+                  <div class="order-input-wrap">
+                    <input type="number" id="orderAmountInput" class="order-input tabular-nums" step="0.0001" placeholder="0.00">
+                    <span class="order-unit" id="orderAmountUnit">BTC</span>
+                  </div>
+                </div>
+
+                <!-- Quick Percentage Buttons -->
+                <div class="order-pct-chips">
+                  <button type="button" class="pct-chip" onclick="setOrderPercentage(25)">25%</button>
+                  <button type="button" class="pct-chip" onclick="setOrderPercentage(50)">50%</button>
+                  <button type="button" class="pct-chip" onclick="setOrderPercentage(75)">75%</button>
+                  <button type="button" class="pct-chip" onclick="setOrderPercentage(100)">100%</button>
+                </div>
+
+                <!-- Total Input -->
+                <div class="order-field-group">
+                  <div class="order-field-label">
+                    <span>Estimated Total</span>
+                  </div>
+                  <div class="order-input-wrap">
+                    <input type="text" id="orderTotalInput" class="order-input tabular-nums" readonly placeholder="0.00">
+                    <span class="order-unit">USDT</span>
+                  </div>
+                </div>
+
+                <!-- Summary & Fee Estimation -->
+                <div class="order-info-summary">
+                  <div class="info-row">
+                    <span>Maker / Taker Fee</span>
+                    <span class="tabular-nums">0.075%</span>
+                  </div>
+                  <div class="info-row">
+                    <span>Est. Trading Fee</span>
+                    <span class="tabular-nums" id="orderFeeEstimate">$0.00 USDT</span>
+                  </div>
+                </div>
+
+                <!-- Submit CTA -->
+                <button type="button" class="btn btn-buy" id="orderSubmitBtn" onclick="submitOrder()">
+                  Buy BTC
+                </button>
+              </div>
+
+              <!-- Orderbook Pane -->
+              <div class="orderbook-view" id="orderbookPane">
+                <div class="orderbook-header">
+                  <span>Price (USDT)</span>
+                  <span class="text-right">Size</span>
+                  <span class="text-right">Total</span>
+                </div>
+                <!-- Asks (Red) -->
+                <div id="orderbookAsks" style="display: flex; flex-direction: column; gap: 2px;"></div>
+
+                <div class="orderbook-spread" id="orderbookSpread">
+                  Spread: 0.12 (0.001%)
+                </div>
+
+                <!-- Bids (Green) -->
+                <div id="orderbookBids" style="display: flex; flex-direction: column; gap: 2px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Orders & History Tray -->
+          <div class="terminal-bottom-tray">
+            <div class="tray-tabs">
+              <button class="tray-tab-btn active">
+                Open Orders (<span id="openOrdersCount">2</span>)
+              </button>
+              <button class="tray-tab-btn" onclick="showToast('Viewing demo order history')">
+                Order History
+              </button>
+              <button class="tray-tab-btn" onclick="showToast('Viewing trade tape feed')">
+                Trade Tape
+              </button>
+            </div>
+            <div class="tray-content-pane">
+              <table class="crypto-table" style="background: transparent;">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Pair</th>
+                    <th>Type</th>
+                    <th>Side</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="openOrdersTableBody">
+                  <!-- Injected by app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10 — PORTFOLIO / ASSETS DASHBOARD
+         ========================================================================== -->
+    <section class="section-wrapper" id="portfolio">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge-tag">INSTITUTIONAL CUSTODY</div>
+          <h2 class="section-title">YOUR ASSETS</h2>
+          <p class="section-desc">
+            Complete real-time portfolio management, multi-currency allocation telemetry, and yield performance metrics.
+          </p>
+        </div>
+
+        <div class="portfolio-overview-grid">
+          <!-- Balance Summary & Asset Table -->
+          <div class="portfolio-metrics-card glass-panel">
+            <div class="portfolio-balance-header">
+              <div class="portfolio-balance-title">Total Estimated Net Worth</div>
+              <div class="portfolio-balance-value">
+                <span id="portfolioNetWorth" class="tabular-nums">$24,892.46</span>
+                <span id="portfolio24hPnl" class="portfolio-balance-change trend-up tabular-nums">
+                  +$842.17 (+3.51%)
+                </span>
+              </div>
+            </div>
+
+            <div class="portfolio-quick-actions">
+              <button class="btn btn-primary btn-sm" onclick="openModal('walletModal')">
+                + Deposit Funds
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('walletModal')">
+                Withdraw
+              </button>
+              <button class="btn btn-outline btn-sm" onclick="showToast('Internal transfers between spot & futures ready', 'info')">
+                Transfer
+              </button>
+            </div>
+
+            <!-- Holdings Breakdown Table -->
+            <table class="crypto-table" style="background: transparent; margin-top: 16px;">
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Available</th>
+                  <th>In Orders</th>
+                  <th>USD Valuation</th>
+                  <th>Allocation</th>
+                </tr>
+              </thead>
+              <tbody id="portfolioHoldingsBody">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Asset Allocation Visual Ring -->
+          <div class="allocation-chart-card glass-panel">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 24px;">Portfolio Asset Allocation</h3>
+            
+            <!-- SVG Donut Chart -->
+            <svg class="donut-chart-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="35" class="donut-segment" stroke="#f7931a" stroke-dasharray="48 52" stroke-dashoffset="25"/>
+              <circle cx="50" cy="50" r="35" class="donut-segment" stroke="#627eea" stroke-dasharray="28 72" stroke-dashoffset="-23"/>
+              <circle cx="50" cy="50" r="35" class="donut-segment" stroke="#14f195" stroke-dasharray="14 86" stroke-dashoffset="-51"/>
+              <circle cx="50" cy="50" r="35" class="donut-segment" stroke="#26a17b" stroke-dasharray="10 90" stroke-dashoffset="-65"/>
+              <text x="50" y="47" text-anchor="middle" font-size="6" fill="var(--text-tertiary)" font-family="var(--font-sans)">ASSETS</text>
+              <text x="50" y="56" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--text-primary)" font-family="var(--font-mono)">4 COINS</text>
+            </svg>
+
+            <!-- Legends -->
+            <div class="allocation-legends">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f7931a;"></span>
+                <span>Bitcoin (BTC): <b>48.0%</b></span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #627eea;"></span>
+                <span>Ethereum (ETH): <b>28.0%</b></span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #14f195;"></span>
+                <span>Solana (SOL): <b>14.0%</b></span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #26a17b;"></span>
+                <span>Tether (USDT): <b>10.0%</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         12 — DISCOVER CRYPTO
+         ========================================================================== -->
+    <section class="section-wrapper" id="discover">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge-tag">NEXT-GEN ECOSYSTEM</div>
+          <h2 class="section-title">DISCOVER THE DIGITAL ECONOMY</h2>
+          <p class="section-desc">
+            Explore cutting-edge blockchain ecosystems, decentralized compute protocols, artificial intelligence tokens, and DeFi primitives.
+          </p>
+        </div>
+
+        <div class="discover-categories">
+          <button class="discover-category-pill active">All Categories</button>
+          <button class="discover-category-pill">Layer 1 & 2</button>
+          <button class="discover-category-pill">AI & Big Data</button>
+          <button class="discover-category-pill">DeFi Protocols</button>
+          <button class="discover-category-pill">Decentralized Storage</button>
+          <button class="discover-category-pill">Gaming & Metaverse</button>
+        </div>
+
+        <div class="discover-grid">
+          <!-- Card 1: Solana -->
+          <div class="discover-card glass-panel glass-panel-glow">
+            <div class="discover-card-top">
+              <div class="discover-card-asset">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: #000; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #00ffa3; font-weight: bold; font-size: 1rem;">S</span>
+                </div>
+                <div>
+                  <div class="font-bold">Solana</div>
+                  <div class="text-xs text-muted">SOL / High Throughput</div>
+                </div>
+              </div>
+              <span class="discover-card-badge">Layer 1</span>
+            </div>
+            <div>
+              <div class="tabular-nums font-bold" style="font-size: 1.4rem;">$184.65</div>
+              <div class="text-xs trend-up tabular-nums font-semibold">↑ +7.84% (24h momentum)</div>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+              Ultra-scalable monolithic blockchain architecture supporting 65,000 TPS with sub-second finality.
+            </p>
+            <button class="btn btn-secondary btn-sm" onclick="switchActivePair('SOL/USDT'); scrollToElement('terminal');">
+              Trade SOL →
+            </button>
+          </div>
+
+          <!-- Card 2: NEAR -->
+          <div class="discover-card glass-panel glass-panel-glow">
+            <div class="discover-card-top">
+              <div class="discover-card-asset">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: #000; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                  N
+                </div>
+                <div>
+                  <div class="font-bold">NEAR Protocol</div>
+                  <div class="text-xs text-muted">NEAR / AI Compute</div>
+                </div>
+              </div>
+              <span class="discover-card-badge" style="background: rgba(0, 240, 255, 0.15); color: var(--cyan-primary);">AI Ecosystem</span>
+            </div>
+            <div>
+              <div class="tabular-nums font-bold" style="font-size: 1.4rem;">$6.75</div>
+              <div class="text-xs trend-up tabular-nums font-semibold">↑ +8.40% (24h momentum)</div>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+              User-owned AI orchestration with sharded Nightshade execution and account abstraction.
+            </p>
+            <button class="btn btn-secondary btn-sm" onclick="switchActivePair('NEAR/USDT'); scrollToElement('terminal');">
+              Trade NEAR →
+            </button>
+          </div>
+
+          <!-- Card 3: Chainlink -->
+          <div class="discover-card glass-panel glass-panel-glow">
+            <div class="discover-card-top">
+              <div class="discover-card-asset">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: #375bd2; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                  ⬡
+                </div>
+                <div>
+                  <div class="font-bold">Chainlink</div>
+                  <div class="text-xs text-muted">LINK / Cross-Chain CCIP</div>
+                </div>
+              </div>
+              <span class="discover-card-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--green-up);">Oracle & Infra</span>
+            </div>
+            <div>
+              <div class="tabular-nums font-bold" style="font-size: 1.4rem;">$18.90</div>
+              <div class="text-xs trend-up tabular-nums font-semibold">↑ +3.80% (24h momentum)</div>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+              The standard decentralized computing platform connecting traditional institutions to smart contracts.
+            </p>
+            <button class="btn btn-secondary btn-sm" onclick="switchActivePair('LINK/USDT'); scrollToElement('terminal');">
+              Trade LINK →
+            </button>
+          </div>
+
+          <!-- Card 4: Avalanche -->
+          <div class="discover-card glass-panel glass-panel-glow">
+            <div class="discover-card-top">
+              <div class="discover-card-asset">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: #e84142; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                  ▲
+                </div>
+                <div>
+                  <div class="font-bold">Avalanche</div>
+                  <div class="text-xs text-muted">AVAX / Subnet Mesh</div>
+                </div>
+              </div>
+              <span class="discover-card-badge">Custom Subnets</span>
+            </div>
+            <div>
+              <div class="tabular-nums font-bold" style="font-size: 1.4rem;">$36.85</div>
+              <div class="text-xs trend-up tabular-nums font-semibold">↑ +5.20% (24h momentum)</div>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+              Interoperable multi-chain network offering sub-second finality and sovereign compliance app-chains.
+            </p>
+            <button class="btn btn-secondary btn-sm" onclick="switchActivePair('AVAX/USDT'); scrollToElement('terminal');">
+              Trade AVAX →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         13 — SECURITY SECTION
+         ========================================================================== -->
+    <section class="section-wrapper" id="security">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge-tag">ENTERPRISE DEFENSE MATRIX</div>
+          <h2 class="section-title">SECURITY WITHOUT COMPROMISE.</h2>
+          <p class="section-desc">
+            Engineered with multi-layer cold custody, hardware security modules, real-time risk anomaly scoring, and zero-knowledge telemetry.
+          </p>
+        </div>
+
+        <div class="security-grid">
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="security-card-title">Multi-Layer Cold Custody</h3>
+            <p class="security-card-desc">
+              Over 98% of all digital reserves are kept in geographically distributed, air-gapped deep cold storage vaults with multi-party signature protocols.
+            </p>
+          </div>
+
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="security-card-title">Hardware-Backed MFA</h3>
+            <p class="security-card-desc">
+              Full support for FIDO2 WebAuthn biometric passkeys, hardware YubiKeys, and session fingerprint integrity protection on every API endpoint.
+            </p>
+          </div>
+
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="security-card-title">AI Anomaly Risk Engine</h3>
+            <p class="security-card-desc">
+              Sub-millisecond monitoring inspects every transaction against predictive heuristic models to intercept unauthorized withdrawals immediately.
+            </p>
+          </div>
+
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="security-card-title">Proof of Reserves</h3>
+            <p class="security-card-desc">
+              Cryptographically verifiable Merkle tree reserves allow users to verify their solvency coverage independently at any block height.
+            </p>
+          </div>
+
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+            </div>
+            <h3 class="security-card-title">Privacy-First Architecture</h3>
+            <p class="security-card-desc">
+              Zero plain-text credentials stored. Sensitive memory spaces are encrypted at rest with AES-256-GCM and rotatable KMS envelopes.
+            </p>
+          </div>
+
+          <div class="security-card glass-panel">
+            <div class="security-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="security-card-title">DDoS & Edge Hardening</h3>
+            <p class="security-card-desc">
+              Anycast multi-datacenter edge routing with 2.5 Tbps mitigation capacity ensures zero service degradation during high market volatility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         14 — PLATFORM FEATURES
+         ========================================================================== -->
+    <section class="section-wrapper" id="features">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge-tag">FINTECH SUPERPOWERS</div>
+          <h2 class="section-title">ENGINEERED FOR SUPREMACY</h2>
+          <p class="section-desc">
+            A comprehensive suite of institutional tools designed to give professional traders the decisive competitive edge.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3>Lightning-Fast Trading</h3>
+            <p>Our proprietary C++ core matching engine processes over 1,400,000 orders per second with predictable sub-millisecond roundtrips.</p>
+          </div>
+
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3>Advanced Analytics</h3>
+            <p>Institutional charting with deep orderbook heatmaps, volume footprint profiling, VWAP metrics, and customizable multi-timeframe views.</p>
+          </div>
+
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3>Intelligent Alerts</h3>
+            <p>Configure custom price boundary and volatility breakout alerts delivered instantaneously via browser toasts, webhooks, or push notifications.</p>
+          </div>
+
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3>Multi-Asset Portfolio</h3>
+            <p>Seamlessly balance digital assets, tokenized treasuries, stablecoins, and liquidity positions within an intuitive unified asset console.</p>
+          </div>
+
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3>Global Liquidity Pools</h3>
+            <p>Aggregated Tier-1 market maker liquidity channels provide tight spreads and institutional fill rates even during heavy macro volatility.</p>
+          </div>
+
+          <div class="feature-box glass-panel">
+            <div class="feature-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>Secure By Design</h3>
+            <p>Constructed around defense-in-depth principles, zero-trust enclave isolation, and verifiable algorithmic execution certainty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         32 — FINAL LANDING CTA
+         ========================================================================== -->
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="badge-tag">START EXPLORING TODAY</div>
+          <h2 class="final-cta-title">
+            READY TO ENTER THE<br>
+            <span class="gradient-text">DIGITAL ECONOMY?</span>
+          </h2>
+          <p class="final-cta-desc">
+            Experience a smarter, faster, and more intelligent way to explore, analyze and execute digital assets with zero compromise.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="openModal('authModal')">
+              Explore CRYPTERA →
+            </button>
+            <a href="#markets" class="btn btn-secondary" onclick="scrollToElement('markets')">
+              View Markets
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       31 — ENTERPRISE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div>
+          <a href="#" class="brand-logo" style="margin-bottom: 12px;">
+            <svg class="brand-icon-svg" viewBox="0 0 40 40" fill="none">
+              <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="#00f0ff" stroke-width="2" fill="none"/>
+              <circle cx="20" cy="20" r="4" fill="#8b5cf6"/>
+            </svg>
+            <span class="brand-name">CRYPTERA</span>
+          </a>
+          <p class="footer-brand-desc">
+            Trade the Future. The ultra-premium cryptocurrency exchange and institutional trading terminal.
+          </p>
+        </div>
+
+        <!-- Col 1: Platform -->
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#markets">Markets</a></li>
+            <li><a href="#terminal">Trading Terminal</a></li>
+            <li><a href="#portfolio">Assets Dashboard</a></li>
+            <li><a href="#security">Proof of Reserves</a></li>
+            <li><a href="#features">Institutional VIP</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Cryptera</a></li>
+            <li><a href="#">Careers (We're Hiring)</a></li>
+            <li><a href="#">Press Kit & Brand Assets</a></li>
+            <li><a href="#">Security Audits</a></li>
+            <li><a href="#">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">API Documentation</a></li>
+            <li><a href="#">FIX 4.4 / WebSocket Specs</a></li>
+            <li><a href="#">Market Maker Program</a></li>
+            <li><a href="#">Exchange Status</a></li>
+            <li><a href="#">Fee Schedule</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal -->
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Risk Disclosure Statement</a></li>
+            <li><a href="#">AML / KYC Guidelines</a></li>
+            <li><a href="#">Law Enforcement Requests</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Risk Warning Disclosure -->
+      <div class="footer-disclaimer-card">
+        <b>RISK WARNING & REGULATORY DISCLAIMER:</b> Digital asset trading involves substantial risk of loss and is not suitable for every investor. The valuation of cryptocurrencies may fluctuate violently, and you may lose more than your initial deposit. Simulated and demo portfolio numbers shown on this platform are for interface demonstration and educational purposes only. Always conduct your own independent financial research before committing real capital.
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 CRYPTERA Exchange Technology Ltd. All global rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--text-tertiary); text-decoration: none;">Status: <span class="trend-up font-bold">100% Operational</span></a>
+          <a href="#" style="color: var(--text-tertiary); text-decoration: none;">Security: <span class="text-cyan font-bold">Encrypted</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       18 — MOBILE BOTTOM NAVIGATION DOCK
+       ========================================================================== -->
+  <nav class="mobile-bottom-dock" aria-label="Mobile Navigation Dock">
+    <div class="dock-items">
+      <a href="#hero" class="dock-btn active" onclick="scrollToElement('hero')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="#markets" class="dock-btn" onclick="scrollToElement('markets')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Markets</span>
+      </a>
+      <a href="#terminal" class="dock-btn" onclick="scrollToElement('terminal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <span>Trade</span>
+      </a>
+      <a href="#portfolio" class="dock-btn" onclick="scrollToElement('portfolio')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>Assets</span>
+      </a>
+      <button class="dock-btn" onclick="openModal('authModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Profile</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       11 & 19 — INTERACTIVE DEMO MODALS
+       ========================================================================== -->
+
+  <!-- AUTH MODAL (LOGIN & SIGNUP) -->
+  <div id="authModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Welcome to CRYPTERA</h3>
+        <button class="modal-close-btn" onclick="closeModal('authModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Social SSO Demo Button -->
+        <button class="btn btn-secondary" style="width: 100%; gap: 10px;" onclick="showToast('Signed in with Google SSO Demo!', 'success'); closeModal('authModal');">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M12 5c1.7 0 3 .6 4 1.5l3-3C17.2 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/>
+            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z"/>
+            <path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12 0 12s.7 2.3 1.9 4.7l3.7-1.9z"/>
+            <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <div style="text-align: center; color: var(--text-tertiary); font-size: 0.8125rem;">
+          — OR ENTER YOUR CREDENTIALS —
+        </div>
+
+        <form onsubmit="event.preventDefault(); showToast('Demo authentication verified!', 'success'); closeModal('authModal');" style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="order-field-group">
+            <label class="order-field-label">Email Address</label>
+            <div class="order-input-wrap">
+              <input type="email" class="order-input" placeholder="trader@cryptera.io" required value="alex.vance@cryptera.io">
+            </div>
+          </div>
+          <div class="order-field-group">
+            <label class="order-field-label">Password</label>
+            <div class="order-input-wrap">
+              <input type="password" class="order-input" placeholder="••••••••••••" required value="CrypteraSecure2026!">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-tertiary);">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <input type="checkbox" checked> Remember session
+            </label>
+            <a href="#" style="color: var(--cyan-primary); text-decoration: none;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px;">
+            Sign In to Terminal
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- WALLET DEPOSIT / WITHDRAW MODAL -->
+  <div id="walletModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Deposit Crypto Asset</h3>
+        <button class="modal-close-btn" onclick="closeModal('walletModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="order-field-group">
+          <label class="order-field-label">Select Deposit Asset</label>
+          <select class="alert-input-select" style="width: 100%;" onchange="document.getElementById('depositSymbol').textContent = this.value;">
+            <option value="USDT">Tether (USDT)</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="SOL">Solana (SOL)</option>
+          </select>
+        </div>
+
+        <div class="order-field-group">
+          <label class="order-field-label">Deposit Network</label>
+          <select class="alert-input-select" style="width: 100%;">
+            <option>Ethereum (ERC-20) — Avg Time 3 mins</option>
+            <option>TRON (TRC-20) — Low Fee</option>
+            <option>Solana (SPL) — Instant</option>
+            <option>BNB Smart Chain (BEP-20)</option>
+          </select>
+        </div>
+
+        <!-- Safe Demo QR visual representation -->
+        <div class="deposit-qr-wrap">
+          <svg width="140" height="140" viewBox="0 0 100 100" fill="#06080d">
+            <rect width="100" height="100" fill="#fff"/>
+            <!-- Top-left marker -->
+            <rect x="10" y="10" width="24" height="24" fill="#06080d"/>
+            <rect x="14" y="14" width="16" height="16" fill="#fff"/>
+            <rect x="18" y="18" width="8" height="8" fill="#06080d"/>
+            <!-- Top-right marker -->
+            <rect x="66" y="10" width="24" height="24" fill="#06080d"/>
+            <rect x="70" y="14" width="16" height="16" fill="#fff"/>
+            <rect x="74" y="18" width="8" height="8" fill="#06080d"/>
+            <!-- Bottom-left marker -->
+            <rect x="10" y="66" width="24" height="24" fill="#06080d"/>
+            <rect x="14" y="70" width="16" height="16" fill="#fff"/>
+            <rect x="18" y="74" width="8" height="8" fill="#06080d"/>
+            <!-- Random tech matrix dots -->
+            <rect x="40" y="12" width="6" height="6" fill="#06080d"/>
+            <rect x="52" y="18" width="8" height="6" fill="#06080d"/>
+            <rect x="42" y="32" width="16" height="16" fill="#00f0ff"/>
+            <rect x="64" y="44" width="8" height="12" fill="#06080d"/>
+            <rect x="22" y="44" width="10" height="8" fill="#06080d"/>
+            <rect x="40" y="64" width="14" height="6" fill="#06080d"/>
+            <rect x="68" y="72" width="18" height="10" fill="#06080d"/>
+          </svg>
+        </div>
+
+        <div class="order-field-group">
+          <label class="order-field-label">Your Safe Deposit Address</label>
+          <div class="copy-input-field">
+            <input type="text" id="demoDepositAddress" readonly value="0x71C...49b2E198F0D3a76A5b">
+            <button class="btn btn-outline btn-sm" onclick="copyToClipboard('0x71C8472949b2E198F0D3a76A5b90872', this)">
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <div style="font-size: 0.75rem; color: var(--text-tertiary); line-height: 1.5;">
+          ⚠️ Send only <span id="depositSymbol" class="font-bold text-cyan">USDT</span> to this address. Sending any other asset will result in simulated demo cancellation.
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%;" onclick="showToast('Simulated deposit of +$5,000 USDT received!', 'success'); CRYPTERA_STATE.user.holdings.USDT.available += 5000; updatePortfolioUI(); closeModal('walletModal');">
+          Simulate Incoming Deposit (+$5,000)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICE ALERT MODAL -->
+  <div id="alertModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Create Price Alert</h3>
+        <button class="modal-close-btn" onclick="closeModal('alertModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="createAlert(event)">
+          <div class="alert-creation-row">
+            <select id="alertAssetSelect" class="alert-input-select">
+              <option value="BTC">BTC (Bitcoin)</option>
+              <option value="ETH">ETH (Ethereum)</option>
+              <option value="SOL">SOL (Solana)</option>
+              <option value="BNB">BNB (BNB Chain)</option>
+              <option value="XRP">XRP</option>
+              <option value="AVAX">AVAX</option>
+            </select>
+
+            <select id="alertConditionSelect" class="alert-input-select">
+              <option value="above">rises above</option>
+              <option value="below">drops below</option>
+            </select>
+
+            <input type="number" id="alertPriceInput" class="alert-input-select tabular-nums" placeholder="Target price ($)" step="0.01" required>
+
+            <button type="submit" class="btn btn-primary btn-sm" style="height: 44px;">
+              Create Alert
+            </button>
+          </div>
+        </form>
+
+        <div>
+          <h4 style="font-size: 0.875rem; font-weight: 700; margin-bottom: 12px;">Your Active Alerts</h4>
+          <div id="alertsListContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE SLIDE-IN NAVIGATION DRAWER -->
+  <div id="mobileDrawer" class="modal-backdrop">
+    <div class="modal-box" style="max-width: 320px; height: 100vh; margin-right: auto; margin-left: 0; border-radius: 0; display: flex; flex-direction: column;">
+      <div class="modal-header">
+        <div class="brand-name">CRYPTERA</div>
+        <button class="modal-close-btn" onclick="closeModal('mobileDrawer')">✕</button>
+      </div>
+      <div class="modal-body" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+        <nav style="display: flex; flex-direction: column; gap: 16px; font-size: 1.1rem; font-weight: 600;">
+          <a href="#markets" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Markets</a>
+          <a href="#terminal" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Trade Terminal</a>
+          <a href="#portfolio" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Assets & Portfolio</a>
+          <a href="#discover" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Discover Crypto</a>
+          <a href="#security" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Security Architecture</a>
+          <a href="#features" onclick="closeModal('mobileDrawer')" style="color: var(--text-primary); text-decoration: none;">Platform Features</a>
+        </nav>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+          <button class="btn btn-primary" onclick="closeModal('mobileDrawer'); openModal('authModal');" style="width: 100%;">
+            Log In / Sign Up
+          </button>
+          <button class="btn btn-secondary" onclick="toggleTheme()" style="width: 100%;">
+            Toggle Dark / Light Mode
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
